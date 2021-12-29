@@ -1,7 +1,7 @@
 import React from "react";
 import "./Expense.css";
 import Card from "../Card/Card";
-import ExpenseItem from "../ExpenseItem/ExpenseItem";
+import ExpenseItem from "./ExpenseItem/ExpenseItem";
 
 const Expense = (props) => (
   <Card className="Expense">

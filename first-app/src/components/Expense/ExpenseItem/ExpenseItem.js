@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./ExpenseItem.module.css";
 
-import Card from "../Card/Card";
+import Card from "../../Card/Card";
 import ExpenseDate from "../ExpenseDate/ExpenseDate";
 
 const ExpenseItem = (props) => (
