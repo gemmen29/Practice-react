@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./ExpenseItem.module.css";
 
 import Card from "../../Card/Card";
@@ -14,9 +13,5 @@ const ExpenseItem = (props) => (
     </div>
   </Card>
 );
-
-ExpenseItem.propTypes = {};
-
-ExpenseItem.defaultProps = {};
 
 export default ExpenseItem;

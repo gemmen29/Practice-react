@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./ExpenseDate.module.css";
 
 const ExpenseDate = (props) => {
@@ -15,9 +14,5 @@ const ExpenseDate = (props) => {
     </div>
   );
 };
-
-ExpenseDate.propTypes = {};
-
-ExpenseDate.defaultProps = {};
 
 export default ExpenseDate;
