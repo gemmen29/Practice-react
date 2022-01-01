@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "./DisplayUsers.module.css";
+import DisplaySingleUser from "./DisplaySingleUser/DisplaySingleUser";
 
 const DisplayUsers = (props) => (
   <ul className={styles.users}>
     {props.users.map((user) => (
-      <li
-        key={user.id}
-        className={`${styles["user-item"]} fw-bold p-2`}
-      >{`${user.username} (${user.age} years old)`}</li>
+      <DisplaySingleUser key={user.id} user={user} />
     ))}
   </ul>
 );

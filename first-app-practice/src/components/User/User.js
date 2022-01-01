@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import "./User.module.css";
 import AddUserForm from "./AddUserForm/AddUserForm";
 import DisplayUsers from "./DisplayUsers/DisplayUsers";
+
+import Card from "../UI/Card/Card";
+import Container from "../UI/Container/Container";
 
 const usersDefault = [
   { id: Math.random(), username: "George", age: "25" },
@@ -15,14 +17,14 @@ const User = () => {
     setUsers((previousUsers) => [user, ...previousUsers]);
   };
   return (
-    <div className="bg-dark py-5 min-vh-100">
-      <div className="container bg-light rounded py-2">
+    <Container>
+      <Card>
         <AddUserForm addNewUser={addNewUserHandler} />
-      </div>
-      <div className="container bg-light rounded py-2 mt-4">
+      </Card>
+      <Card className="mt-5">
         <DisplayUsers users={users} />
-      </div>
-    </div>
+      </Card>
+    </Container>
   );
 };
 
