@@ -1,14 +1,16 @@
 import React, { useState, useRef } from "react";
 import styles from "./AddUserForm.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MyModal from "../../UI/Modal/MyModal";
+// import MyModal from "../../UI/Modal/MyModal";
+import ErrorModal from "../../UI/ErrorModal/ErrorModal";
 
 const AddForm = (props) => {
   const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
-  const modalRef = useRef();
+  // const modalRef = useRef();
 
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState();
 
   const usernameChangeHandler = (e) => {
     setUsername(e.target.value);
@@ -21,13 +23,21 @@ const AddForm = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (username.trim().length === 0 || age.trim().length === 0) {
-      setErrorMessage("Username and Age is required");
-      modalRef.current.showModal();
+      // setErrorMessage("Username and Age is required");
+      // modalRef.current.showModal();
+      setError({
+        title: "Invalid Input",
+        message: "Username and Age is required",
+      });
       return;
     }
     if (age < 1) {
-      setErrorMessage("Age must be greater than zero");
-      modalRef.current.showModal();
+      // setErrorMessage("Age must be greater than zero");
+      // modalRef.current.showModal();
+      setError({
+        title: "Invalid Age Value",
+        message: "Age must be greater than zero",
+      });
       return;
     }
     const user = {
@@ -39,6 +49,10 @@ const AddForm = (props) => {
 
     setUsername("");
     setAge("");
+  };
+
+  const errorHandler = () => {
+    setError(null);
   };
   return (
     <div>
@@ -75,7 +89,14 @@ const AddForm = (props) => {
           </button>
         </div>
       </form>
-      <MyModal ref={modalRef} message={errorMessage} />
+      {/* <MyModal ref={modalRef} message={errorMessage} /> */}
+      {error && (
+        <ErrorModal
+          onConfirm={errorHandler}
+          title={error.title}
+          message={error.message}
+        />
+      )}
     </div>
   );
 };
