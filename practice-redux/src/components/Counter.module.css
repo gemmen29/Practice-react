@@ -21,3 +21,11 @@
   margin: 2rem 0;
   font-weight: bold;
 }
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+}
