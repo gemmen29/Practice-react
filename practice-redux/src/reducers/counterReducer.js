@@ -1,4 +1,4 @@
-const counterReducerDefaultState = { counter: 0 };
+const counterReducerDefaultState = { counter: 0, showCounter: true };
 
 const counterReducer = (state = counterReducerDefaultState, action) => {
   switch (action.type) {
@@ -16,6 +16,11 @@ const counterReducer = (state = counterReducerDefaultState, action) => {
       return {
         ...state,
         counter: state.counter - 1,
+      };
+    case "TOGGLE":
+      return {
+        ...state,
+        showCounter: !state.showCounter,
       };
     default:
       return state;
