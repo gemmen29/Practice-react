@@ -15,6 +15,7 @@ const Products = () => {
             title={product.name}
             price={product.price}
             description={product.description}
+            id={product.id}
           />
         ))}
       </ul>
