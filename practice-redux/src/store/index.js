@@ -5,6 +5,4 @@ const store = configureStore({
   reducer: counterSlice.reducer,
 });
 
-module.export = counterSlice.actions;
-
 export default store;
