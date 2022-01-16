@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
 
 const initialState = { items: [] };
 const cartSlice = createSlice({
@@ -11,7 +10,7 @@ const cartSlice = createSlice({
       const existingItem = state.items.find((item) => item.id === newItem.id);
       if (!existingItem) {
         state.items.push({
-          id: uuidv4(),
+          id: newItem.id,
           price: newItem.price,
           quantity: 1,
           name: newItem.title,
