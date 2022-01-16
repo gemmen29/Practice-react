@@ -13,6 +13,6 @@ const productsSlice = createSlice({
   reducers: {},
 });
 
-export const cartActions = cartSlice.actions;
+export const cartActions = productsSlice.actions;
 
-export default cartSlice;
+export default productsSlice;
