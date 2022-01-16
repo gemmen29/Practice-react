@@ -2,7 +2,7 @@ import ProductItem from "./ProductItem";
 import classes from "./Products.module.css";
 import { useSelector } from "react-redux";
 
-const Products = (props) => {
+const Products = () => {
   const products = useSelector((state) => state.products.products);
 
   return (
