@@ -1,48 +1,44 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/Header";
 import AddNewTodo from "./components/Todo/AddNewTodo/AddNewTodo";
 import DisplayTodo from "./components/Todo/DisplayTodo/DisplayTodo";
+import { useSelector, useDispatch } from "react-redux";
+import { todoActions } from "./slices/todoSlice";
 
 const todoKey = "todos";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (localStorage.getItem(todoKey)) {
-      setTodos(JSON.parse(localStorage.getItem(todoKey)));
+      dispatch(
+        todoActions.addMultiple(JSON.parse(localStorage.getItem(todoKey)) ?? [])
+      );
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     localStorage.setItem(todoKey, JSON.stringify(todos));
   }, [todos]);
 
   const AddNewTodoHandler = (todo) => {
-    setTodos((preTodos) => [...preTodos, todo]);
+    dispatch(todoActions.addNew(todo));
   };
 
   const ChangeCheckHandler = (todoId) => {
-    setTodos((preTodos) => {
-      const allTodos = [...preTodos];
-      const todo = allTodos.find((todo) => todo.id === todoId);
-      todo.completed = !todo.completed;
-      return [...allTodos];
-    });
+    dispatch(todoActions.toggleCheck(todoId));
   };
 
   const deleteHandler = (todoId) => {
-    setTodos((preTodos) => preTodos.filter((todo) => todo.id !== todoId));
+    dispatch(todoActions.delete(todoId));
   };
 
   const editHandler = (todoId, newTitle) => {
-    setTodos((preTodos) => {
-      const allTodos = [...preTodos];
-      const todo = allTodos.find((todo) => todo.id === todoId);
-      todo.title = newTitle;
-      return [...allTodos];
-    });
+    dispatch(todoActions.edit({ id: todoId, title: newTitle }));
   };
 
   return (
