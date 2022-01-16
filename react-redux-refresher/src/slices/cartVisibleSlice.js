@@ -12,6 +12,6 @@ const cartVisibleSlice = createSlice({
   },
 });
 
-export const cartVisibleActions = uiSlice.actions;
+export const cartVisibleActions = cartVisibleSlice.actions;
 
 export default cartVisibleSlice;
