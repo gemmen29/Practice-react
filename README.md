@@ -19,6 +19,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
+- Practice React: [Live Demo](https://practical-knuth-11f7a7.netlify.app/)
 - React Redux Refresher: [Live Demo](https://eager-pare-cfa149.netlify.app/)
 - Todo React Redux: [Live Demo](https://dreamy-wiles-91bf49.netlify.app/)
 
