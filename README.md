@@ -15,10 +15,11 @@ Additional description about the project and its features.
 - Javascript
 - Webpacks
 - React
+- Redux
 
 ## Live Demo
 
-[Live Demo Link](https://gemmen29.github.io/{Repo-Name}/)
+Todo React Redux: [Live Demo](https://dreamy-wiles-91bf49.netlify.app/)
 
 ## Getting Started
 
@@ -160,4 +161,3 @@ This section has moved here:
 
 This section has moved here:
 [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
