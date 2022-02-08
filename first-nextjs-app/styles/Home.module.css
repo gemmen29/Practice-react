@@ -114,3 +114,15 @@
     flex-direction: column;
   }
 }
+
+.home {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.news {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
