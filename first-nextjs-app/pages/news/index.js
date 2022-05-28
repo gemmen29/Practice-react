@@ -1,4 +1,13 @@
-import styles from '../../styles/Home.module.css';
+import Link from 'next/link';
 export default function NewsPage() {
-  return <div className={styles.news}>Hello in news page</div>;
+  return (
+    <ul>
+      <li>
+        <Link href="/news/1">Item 1</Link>
+      </li>
+      <li>
+        <Link href="/news/2">Item 2</Link>
+      </li>
+    </ul>
+  );
 }
